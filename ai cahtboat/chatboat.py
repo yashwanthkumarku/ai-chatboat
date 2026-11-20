@@ -17,4 +17,4 @@ while True:
         break
 
     response=chain.invoke({"ai":ai,"question":question})
-    print(response,"\n if you want to stop conversation type 'exit' ")
+    print(response,"\n if you want to stop conversation type 'exit' or continue to ask question")
