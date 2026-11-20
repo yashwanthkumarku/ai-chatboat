@@ -1,6 +1,6 @@
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParserco
+from langchain_core.output_parsers import StrOutputParser
 
 prompt_template=ChatPromptTemplate.from_messages([("system","you are {ai} talk with people within two sentences "),
                                                   ("user","{question}")])
@@ -17,4 +17,4 @@ while True:
         break
 
     response=chain.invoke({"ai":ai,"question":question})
-    print(response,"\n if you want to stop conversation type 'exit' ")
+    print(response,"\n if you want to stop conversation type 'exit' or continue to ask question")
