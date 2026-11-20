@@ -10,10 +10,10 @@ parser=StrOutputParser()
 
 chain=prompt_template|llm|parser
 
-ai=input("enter ai role :")
+ai=input("enter ai role according to you situation given:")
 while True:
     question=input("question :")
-    if question.lower=="exit":
+    if question.lower()=="exit":
         break
 
     response=chain.invoke({"ai":ai,"question":question})
