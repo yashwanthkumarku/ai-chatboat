@@ -2,7 +2,7 @@ from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-prompt_template=ChatPromptTemplate.from_messages([("system","you are {ai} talk with people within two sentences "),
+prompt_template=ChatPromptTemplate.from_messages([("system","you are {ai} talk with people within two sentences and give answer in simple words"),
                                                   ("user","{question}")])
 llm=ChatOllama(model="llama3.2:latest")
 
@@ -11,6 +11,8 @@ parser=StrOutputParser()
 chain=prompt_template|llm|parser
 
 ai=input("enter ai role according to you situation given:")
+
+
 while True:
     question=input("question :")
     if question.lower()=="exit":
